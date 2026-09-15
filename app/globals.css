@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream text-forest-700 antialiased;
+  }
+  a {
+    @apply text-forest-700 no-underline transition-colors;
+  }
+  a:hover {
+    @apply text-forest-300;
+  }
+  ::selection {
+    @apply bg-forest text-cream;
+  }
+  h1, h2, h3 {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-shell px-6;
+  }
+  .eyebrow {
+    @apply text-[11px] uppercase tracking-[0.3em];
+  }
+  .pill {
+    @apply inline-flex items-center justify-center rounded-full px-7 py-4 text-[11.5px] uppercase tracking-[0.16em] transition-colors;
+  }
+  .pill-solid {
+    @apply pill border-0 bg-forest text-cream hover:bg-forest-700 hover:text-cream;
+  }
+  .pill-outline {
+    @apply pill border border-forest bg-transparent text-forest hover:bg-forest hover:text-cream;
+  }
+  .pill-light {
+    @apply pill border-0 bg-cream text-forest hover:bg-cream-200 hover:text-forest;
+  }
+  .pill-ghost {
+    @apply pill border border-cream/60 text-cream hover:bg-cream/15 hover:text-cream;
+  }
+  .field {
+    @apply w-full border border-forest/30 bg-transparent px-4 py-3.5 text-base text-forest-700 outline-none focus:border-forest;
+  }
+  .field-label {
+    @apply text-[11px] uppercase tracking-[0.24em] text-forest-300;
+  }
+}
